@@ -4,18 +4,18 @@
 // // tsc -help
 
 // //lesson #21  .Объектные литералы и аннотации функций
-const serverConfig:{protocol: 'http' | 'https', port: 3000 | 3001}={
-  protocol:"https",
-  port:3001
-}
-function startServer(protocol: 'http' | 'https', port: 3000 | 3001): 'Serer started' {
-  console.log(`Serer started in ${protocol}: //server:${port}`);
-  return 'Serer started';
-}
-startServer(serverConfig.protocol, serverConfig.port)
+// const serverConfig:{protocol: 'http' | 'https', port: 3000 | 3001}={
+//   protocol:"https",
+//   port:3001
+// }
+// function startServer(protocol: 'http' | 'https', port: 3000 | 3001): 'Serer started' {
+//   console.log(`Serer started in ${protocol}: //server:${port}`);
+//   return 'Serer started';
+// }
+// startServer(serverConfig.protocol, serverConfig.port)
 
-// //lesson #21  Псевдонимы типов (Type aliases)
-//
+//lesson #21  Псевдонимы типов (Type aliases)
+
 // type timingFuncType = 'ease' | 'ease-out' | 'ease-in'
 // type idType = string | number
 // const createAnimation = (id: string | number, animationName: string, timingFunc: timingFuncType,
