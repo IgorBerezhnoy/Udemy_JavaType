@@ -4,13 +4,65 @@
 // // tsc -help
 
 
+// 33. Запросы типов
+
+const dataFromControl = {
+  water: 200,
+  el: 350
+};
+
+function checkReadings(data: typeof dataFromControl): boolean {
+  const dataFromUser = {
+    water: 200,
+    el: 350
+  };
+  return data.el === dataFromUser.el && data.water === dataFromUser.water;
+}
+
+const Pi = 3.14;
+let PiClone: typeof Pi = Pi;
+
+// 32. Тип Unknown
+
+// let smth: unknown;
+// smth = 'str';
+// if (typeof smth ==="string"){
+// let data: string= smth;
+// }
+//
+// const someValue:unknown=40
+// someValue.toLowerCase()
 
 
-
-
-
-
-
+// function fetchData(data: unknown): void {
+//   if (typeof data === 'string') {
+//     console.log(data.toUpperCase());
+//   }
+// }
+//
+// const userData = '{"isBirthdayData":true,"ageData":40, "userNameData":"John"}';
+//
+// function safeParse(str: string): unknown {
+//   return JSON.parse(str);
+// }
+//
+// const data = safeParse(userData);
+//
+// function tranferData(d: unknown): void {
+//   if (typeof d === 'string') {
+//     console.log();
+//   } else if (typeof d === 'object' && d) {
+//     console.log(d);
+//   } else {
+//     throw new Error('Error!!!!!!!!!!!!!!!!!!  ');
+//   }
+// }
+//
+//
+// type T0 = any | unknown // Эни всегда перекрывает unknown
+// type T1 = number | unknown //unknown всегда перекрывает любой тип
+// type T3 = any & unknown // Эни всегда перекрывает unknown
+// type T4 = number & unknown //number
 // // 31. Enums
 //
 // const TOP = 'Top';
