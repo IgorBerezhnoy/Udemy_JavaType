@@ -3,32 +3,90 @@
 // //tsc --init
 // // tsc -help
 
+
+
+
+
+
+
+
+
+// // 31. Enums
+//
+// const TOP = 'Top';
+// const RIGHT = 'Right';
+//
+// const enum Directions {
+//   TOP,
+//   RIGHT,
+//   LEFT,
+//   BOTTOM
+// }
+//
+// const enum TimingFunc {
+//   EASE = "ease",
+//   EASE_IN = "ese-in",
+//   LINER = "linear"
+// }
+//
+//
+// function frame(element: string, dir: Directions, tFunc: TimingFunc): void {
+//   if (dir === Directions.RIGHT) {
+//     console.log(tFunc);
+//   }
+// }
+//
+// frame('id', Directions.RIGHT, TimingFunc.LINER);
+
+// 30. Модификаторы свойств: readonly (Property Modifiers)
+// 29. (д) Оператор Non-Null and Non-Undefined
 // 28. Модификаторы свойств: optional (Property Modifiers)
+// interface User {
+//   readonly login: string;
+//   password: string;
+//   age: number;
+//   readonly addr?: string | undefined;
+//   parents?: {
+//     mother?: string
+//     father?: string
+//   };
+// }
+//
+// const user: User = {
+//   login: 'login',
+//   password: '12345',
+//   age: 20,
+//   addr: ''
+// };
+//
+// const userFreeze: Readonly<User> = {
+//   login: 'login',
+//   password: '12345',
+//   age: 20,
+// };
+// // user.login = 'sdfsd';
+// user.password = 'sdfsd';
+// let dbName: string;
+// sendUserData(user, '');
+// dbName!.toUpperCase();
+//
+// function sendUserData(obj: User, db?: string): void {
+//   dbName = 'asdasd';
+//   console.log(obj, db!.toUpperCase());
+//   console.log(obj.parents!.father!.toUpperCase());
+// }
+//
+// class Animal {
+//   readonly name: string;
+//
+//   constructor(name: string) {
+//     this.name = name;
+//   }
+// }
+//
+// const basicPorts: readonly number[] = [3000, 3001, 5556];
 
-interface User {
-  login: string;
-  password: string;
-  age: number;
-  addr?: string | undefined;
-  parents?: {
-    mother?: string
-    father?: string
-  };
-}
-
-const user: User = {
-  login: 'login',
-  password: '12345',
-  age: 20,
-  addr: ''
-};
-
-const dbName = '12344';
-
-function sendUserData(obj: User, db?: string): void {
-  console.log(obj, db?.toUpperCase());
-  console.log(obj.parents?.father?.toUpperCase());
-}
+// const basicPorts: readonly [number, ...string[]] = [3000, '312', '12312'];
 
 //27. Механизм вывода типов (Type Inference)
 //

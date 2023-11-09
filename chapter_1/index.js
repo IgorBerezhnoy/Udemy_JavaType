@@ -7,23 +7,26 @@ var msg = 'hello';
 msg = 'Hello';
 var port3000 = 3000;
 var port3001 = 3001;
+
 function startServer(protocol, port) {
-    if (port === port3000 || port === port3001) {
-        console.log("Serer started in ".concat(protocol, ": //server:").concat(port));
-    }
-    else {
-        console.log('Error!!!');
-    }
-    return 'Serer started';
+  if (port === port3000 || port === port3001) {
+    console.log('Serer started in '.concat(protocol, ': //server:').concat(port));
+  } else {
+    console.log('Error!!!');
+  }
+  return 'Serer started';
 }
+
 var createAnimation = function (id, animationName, timingFunc, duration, iterCount) {
-    if (timingFunc === void 0) { timingFunc = 'ease'; }
-    var elem = document.querySelector("#".concat(id));
-    if (elem && elem.style) {
-        console.log("".concat(animationName, " ").concat(timingFunc, " ").concat(duration, " ").concat(iterCount));
-        // elem.style.animation = `${animationName} ${timingFunc} ${duration} ${iterCount}`;
-        // console.log(elem.style.animation);
-    }
+  if (timingFunc === void 0) {
+    timingFunc = 'ease';
+  }
+  var elem = document.querySelector('#'.concat(id));
+  if (elem && elem.style) {
+    console.log(''.concat(animationName, ' ').concat(timingFunc, ' ').concat(duration, ' ').concat(iterCount));
+    // elem.style.animation = `${animationName} ${timingFunc} ${duration} ${iterCount}`;
+    // console.log(elem.style.animation);
+  }
 };
 // //lesson #19 Сужение типов (Narrowing)
 //
