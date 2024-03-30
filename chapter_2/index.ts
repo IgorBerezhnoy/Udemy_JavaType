@@ -22,6 +22,7 @@ function checkReadings(data: typeof dataFromControl): boolean {
 const Pi = 3.14;
 let PiClone: typeof Pi = Pi;
 
+
 // 32. Тип Unknown
 
 // let smth: unknown;
