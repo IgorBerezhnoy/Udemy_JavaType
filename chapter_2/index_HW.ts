@@ -1,3 +1,4 @@
+
 // структура данных склада с одеждой
 
 interface ClothesWarehouse {

@@ -4,23 +4,51 @@
 // // tsc -help
 
 
-// 33. Запросы типов
+// 31. Enums
 
-const dataFromControl = {
-  water: 200,
-  el: 350
-};
 
-function checkReadings(data: typeof dataFromControl): boolean {
-  const dataFromUser = {
-    water: 200,
-    el: 350
-  };
-  return data.el === dataFromUser.el && data.water === dataFromUser.water;
+const Directions = {
+  TOP: 'Top',
+  RIGHT: 'Right',
+  LEFT: 'Left',
+  BOTTOM: 'Bottom'
+} as const;
+
+const TimingFunc = {
+  EASE: 'ease',
+  EASE_IN: 'ese-in',
+  LINER: 'linear'
+} as const;
+type ObjectValues<T> = T[keyof T]
+type DirectionsType = ObjectValues<typeof Directions>;
+type TimingFuncType = ObjectValues<typeof TimingFunc>;
+
+function frame(elem: string, dir: DirectionsType, tFunction: TimingFuncType): void {
+  if (dir === Directions.RIGHT) {
+  }
 }
 
-const Pi = 3.14;
-let PiClone: typeof Pi = Pi;
+frame('id', 'Right', 'ese-in');
+//
+
+
+// 33. Запросы типов
+
+// const dataFromControl = {
+//   water: 200,
+//   el: 350
+// };
+//
+// function checkReadings(data: typeof dataFromControl): boolean {
+//   const dataFromUser = {
+//     water: 200,
+//     el: 350
+//   };
+//   return data.el === dataFromUser.el && data.water === dataFromUser.water;
+// }
+//
+// const Pi = 3.14;
+// let PiClone: typeof Pi = Pi;
 
 
 // 32. Тип Unknown
