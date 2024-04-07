@@ -3,33 +3,67 @@
 // //tsc --init
 // // tsc -help
 
+// 35. Утверждение типов (Type Assertions)
 
+
+// 39. Перегрузка функций
+// interface Square {
+//   side: number;
+//   area: number;
+// }
+//
+// interface Rect {
+//   a: number;
+//   b: number;
+//   area: number;
+// }
+// function calcArea(side: number): Square;
+// function calcArea(a: number, b: number, c: number): Rect;
+// function calcArea(a: number, b?: number,c?: number): Square | Rect {
+//   if (b) {
+//     const rect: Rect = {
+//       a,
+//       b,
+//       area: a * b
+//     };
+//     return rect;
+//   } else {
+//     const square: Square = {
+//       side: a,
+//       area: a * a
+//     };
+//     return square;
+//   }
+// }
+//
+// calcArea(1)
+// calcArea(1,1,2)
 // 31. Enums
 
 
-const Directions = {
-  TOP: 'Top',
-  RIGHT: 'Right',
-  LEFT: 'Left',
-  BOTTOM: 'Bottom'
-} as const;
-
-const TimingFunc = {
-  EASE: 'ease',
-  EASE_IN: 'ese-in',
-  LINER: 'linear'
-} as const;
-type ObjectValues<T> = T[keyof T]
-type DirectionsType = ObjectValues<typeof Directions>;
-type TimingFuncType = ObjectValues<typeof TimingFunc>;
-
-function frame(elem: string, dir: DirectionsType, tFunction: TimingFuncType): void {
-  if (dir === Directions.RIGHT) {
-  }
-}
-
-frame('id', 'Right', 'ese-in');
+// const Directions = {
+//   TOP: 'Top',
+//   RIGHT: 'Right',
+//   LEFT: 'Left',
+//   BOTTOM: 'Bottom'
+// } as const;
 //
+// const TimingFunc = {
+//   EASE: 'ease',
+//   EASE_IN: 'ese-in',
+//   LINER: 'linear'
+// } as const;
+// type ObjectValues<T> = T[keyof T]
+// type DirectionsType = ObjectValues<typeof Directions>;
+// type TimingFuncType = ObjectValues<typeof TimingFunc>;
+//
+// function frame(elem: string, dir: DirectionsType, tFunction: TimingFuncType): void {
+//   if (dir === Directions.RIGHT) {
+//   }
+// }
+//
+// frame('id', 'Right', 'ese-in');
+// //
 
 
 // 33. Запросы типов

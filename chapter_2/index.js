@@ -2,15 +2,127 @@
 // //tsc chapter_2/index.ts
 // //tsc --init
 // // tsc -help
-// 31. Enums
-var TOP = 'Top';
-var RIGHT = 'Right';
-function frame(element, dir, tFunc) {
-    if (dir === 1 /* Directions.RIGHT */) {
-        console.log(tFunc);
+function calcArea(a, b) {
+    if (b) {
+        var rect = {
+            a: a,
+            b: b,
+            area: a * b
+        };
+        return rect;
+    }
+    else {
+        var square = {
+            side: a,
+            area: a * a
+        };
+        return square;
     }
 }
-frame('id', 1 /* Directions.RIGHT */, "linear" /* TimingFunc.LINER */);
+// 31. Enums
+// const Directions = {
+//   TOP: 'Top',
+//   RIGHT: 'Right',
+//   LEFT: 'Left',
+//   BOTTOM: 'Bottom'
+// } as const;
+//
+// const TimingFunc = {
+//   EASE: 'ease',
+//   EASE_IN: 'ese-in',
+//   LINER: 'linear'
+// } as const;
+// type ObjectValues<T> = T[keyof T]
+// type DirectionsType = ObjectValues<typeof Directions>;
+// type TimingFuncType = ObjectValues<typeof TimingFunc>;
+//
+// function frame(elem: string, dir: DirectionsType, tFunction: TimingFuncType): void {
+//   if (dir === Directions.RIGHT) {
+//   }
+// }
+//
+// frame('id', 'Right', 'ese-in');
+// //
+// 33. Запросы типов
+// const dataFromControl = {
+//   water: 200,
+//   el: 350
+// };
+//
+// function checkReadings(data: typeof dataFromControl): boolean {
+//   const dataFromUser = {
+//     water: 200,
+//     el: 350
+//   };
+//   return data.el === dataFromUser.el && data.water === dataFromUser.water;
+// }
+//
+// const Pi = 3.14;
+// let PiClone: typeof Pi = Pi;
+// 32. Тип Unknown
+// let smth: unknown;
+// smth = 'str';
+// if (typeof smth ==="string"){
+// let data: string= smth;
+// }
+//
+// const someValue:unknown=40
+// someValue.toLowerCase()
+// function fetchData(data: unknown): void {
+//   if (typeof data === 'string') {
+//     console.log(data.toUpperCase());
+//   }
+// }
+//
+// const userData = '{"isBirthdayData":true,"ageData":40, "userNameData":"John"}';
+//
+// function safeParse(str: string): unknown {
+//   return JSON.parse(str);
+// }
+//
+// const data = safeParse(userData);
+//
+// function tranferData(d: unknown): void {
+//   if (typeof d === 'string') {
+//     console.log();
+//   } else if (typeof d === 'object' && d) {
+//     console.log(d);
+//   } else {
+//     throw new Error('Error!!!!!!!!!!!!!!!!!!  ');
+//   }
+// }
+//
+//
+// type T0 = any | unknown // Эни всегда перекрывает unknown
+// type T1 = number | unknown //unknown всегда перекрывает любой тип
+// type T3 = any & unknown // Эни всегда перекрывает unknown
+// type T4 = number & unknown //number
+// // 31. Enums
+//
+// const TOP = 'Top';
+// const RIGHT = 'Right';
+//
+// const enum Directions {
+//   TOP,
+//   RIGHT,
+//   LEFT,
+//   BOTTOM
+// }
+//
+// const enum TimingFunc {
+//   EASE = "ease",
+//   EASE_IN = "ese-in",
+//   LINER = "linear"
+// }
+//
+//
+// function frame(element: string, dir: Directions, tFunc: TimingFunc): void {
+//   if (dir === Directions.RIGHT) {
+//     console.log(tFunc);
+//   }
+// }
+//
+// frame('id', Directions.RIGHT, TimingFunc.LINER);
 // 30. Модификаторы свойств: readonly (Property Modifiers)
 // 29. (д) Оператор Non-Null and Non-Undefined
 // 28. Модификаторы свойств: optional (Property Modifiers)
